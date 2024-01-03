@@ -1,8 +1,8 @@
-package main
+package app
 
 import "fmt"
 
-func main() {
+func Main4LearnPoint() {
 	str := "A"
 	pointer := &str            // 数据的指针
 	anotherString := *&str     // 数据指针的值，也就是 value

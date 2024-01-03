@@ -1,7 +1,6 @@
 package main
 
 import (
-	"go101/grammar/multithreading/lock"
 	"time"
 )
 
@@ -12,7 +11,6 @@ func main() {
 	//pkgs.ChannelClose()
 	//pkgs.ChannelStop()
 	//pkgs.ChannelSelect()
-	//pkgs.CustomerProducer()
 	//pkgs.SingleChannel()
 	//pkgs.CtxTest()
 
@@ -20,7 +18,10 @@ func main() {
 	//lock.SafeMapWrite()
 	//lock.WaitGroupMock()
 	//lock.WaitGroup()
-	lock.InvokeCond()
+	//lock.InvokeCond()
+
+	//cus_pro.Main4CusProMulti()
+	//cus_pro.CustomerProducer()
 
 	time.Sleep(time.Second)
 }

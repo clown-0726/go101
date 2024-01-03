@@ -1,12 +1,14 @@
-package main
+package app
 
 import "fmt"
 
-func main() {
+func Main4ParamChange() {
 	para := ParameterStruct{Name: "aaa"}
 	fmt.Println(para)
+
 	changeParameter(&para, "bbb")
 	fmt.Println(para)
+
 	cannotChangeParameter(para, "ccc")
 	fmt.Println(para)
 }

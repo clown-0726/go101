@@ -1,4 +1,4 @@
-package pkgs
+package cus_pro
 
 import (
 	"fmt"
