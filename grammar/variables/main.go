@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"reflect"
+	"go101/grammar/variables/app"
 )
 
 func map_test() {
@@ -49,19 +49,21 @@ func slice_modify_test() {
 
 }
 
-type MyType struct {
-	Name string
-}
-
-func printMyType(t *MyType) {
-	println(t.Name)
-}
-
 type MyTypeTag struct {
 	Foo string `json1:"Lisi"`
 }
 
 func main() {
+	// 变量定义
+	app.UseVariableDefine()
+
+	// strut
+	app.UseStruct()
+
+	// 定义常量
+	app.UseConst()
+	app.UseEnums()
+
 	//map_test()
 	//slice_test()
 	//slice_modify_test()
@@ -72,12 +74,9 @@ func main() {
 	//fullString := fmt.Sprintf("Hello %s from Go\n", *name)
 	//fmt.Println(fullString)
 
-	//t := MyType{Name: "test"}
-	//printMyType(&t)
-
-	mt := MyTypeTag{Foo: "test"}
-	myType := reflect.TypeOf(mt)
-	foo := myType.Field(0)
-	tag := foo.Tag.Get("json1")
-	println(tag)
+	//mt := MyTypeTag{Foo: "test"}
+	//myType := reflect.TypeOf(mt)
+	//foo := myType.Field(0)
+	//tag := foo.Tag.Get("json1")
+	//println(tag)
 }
