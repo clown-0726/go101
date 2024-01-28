@@ -49,10 +49,6 @@ func slice_modify_test() {
 
 }
 
-type MyTypeTag struct {
-	Foo string `json1:"Lisi"`
-}
-
 func main() {
 	// 变量定义
 	app.UseVariableDefine()
@@ -64,19 +60,10 @@ func main() {
 	app.UseConst()
 	app.UseEnums()
 
+	// 使用 Flag
+	app.UseFlag()
+
 	//map_test()
 	//slice_test()
 	//slice_modify_test()
-
-	//name := flag.String("name", "World", "Specify the name you want to say?")
-	//fmt.Println("os args is:", os.Args)
-	//fmt.Println("Input parameter is:", *name)
-	//fullString := fmt.Sprintf("Hello %s from Go\n", *name)
-	//fmt.Println(fullString)
-
-	//mt := MyTypeTag{Foo: "test"}
-	//myType := reflect.TypeOf(mt)
-	//foo := myType.Field(0)
-	//tag := foo.Tag.Get("json1")
-	//println(tag)
 }
