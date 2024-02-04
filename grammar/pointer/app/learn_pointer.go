@@ -10,7 +10,7 @@ func Main4LearnPoint() {
 	fmt.Println(pointer)       // 0xc000096230
 	fmt.Println(anotherString) // A
 
-	fmt.Println()
+	fmt.Println("---------")
 
 	str = "B"
 	fmt.Println(str)           // B
