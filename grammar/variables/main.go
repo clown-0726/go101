@@ -53,9 +53,6 @@ func main() {
 	// 变量定义
 	app.UseVariableDefine()
 
-	// strut
-	app.UseStruct()
-
 	// 定义常量
 	app.UseConst()
 	app.UseEnums()
