@@ -1,5 +1,7 @@
 package app
 
+// 通过嵌入的方式来扩充类型
+
 type MyNodeEmbedding struct {
 	*Node
 }
@@ -16,7 +18,7 @@ func (myNodeEmbedding *MyNodeEmbedding) postOrderEmbedding() {
 	myNodeEmbedding.Print()
 }
 
-func PostOrderEmbedding() {
+func PostOrderTraverseEmbedding() {
 	root := Node{value: 3}
 	root.left = &Node{value: 2}
 	root.right = &Node{value: 1, left: nil, right: nil}

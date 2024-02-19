@@ -25,23 +25,23 @@ func (node *Node) SetValue(value int) {
 	node.value = value
 }
 
-func (node *Node) Traverse() {
+func (node *Node) InOrder() {
 	if node == nil {
 		return
 	}
-	node.left.Traverse()
+	node.left.InOrder()
 	node.Print()
-	node.right.Traverse()
+	node.right.InOrder()
 }
 
-func UseNode() {
+func InOrderTraverse() {
 	/*
 			                  root:3
 		        node:2                     root:1
 		node:nil      node:nil       node:0      node:8
 	*/
 
-	//var root Node // 这时候 root 为 nil
+	// var root Node // 这时候 root 为 nil
 	root := Node{value: 3}
 	root.left = &Node{value: 2}
 	root.right = &Node{value: 1, left: nil, right: nil}
@@ -50,7 +50,7 @@ func UseNode() {
 	root.right.right.SetValue(8)
 
 	// 遍历
-	root.Traverse()
+	root.InOrder()
 }
 
 func UseNodeMany() {

@@ -1,5 +1,7 @@
 package app
 
+// 通过组合的方式来扩充类型
+
 type MyNode struct {
 	Node *Node
 }
@@ -16,7 +18,7 @@ func (myNode *MyNode) postOrder() {
 	myNode.Node.Print()
 }
 
-func PostOrder() {
+func PostOrderTraverse() {
 	root := Node{value: 3}
 	root.left = &Node{value: 2}
 	root.right = &Node{value: 1, left: nil, right: nil}

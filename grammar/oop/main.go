@@ -7,7 +7,7 @@ import (
 
 func main() {
 	app.UseNodeMany()
-	app.UseNode()
+	app.InOrderTraverse()
 
 	fmt.Println("---------")
 
@@ -21,12 +21,12 @@ func main() {
 	fmt.Println("---------")
 
 	// PostOrder
-	app.PostOrder()
+	app.PostOrderTraverse()
 
 	fmt.Println("---------")
 
 	// PostOrderEmbedding
-	app.PostOrderEmbedding()
+	app.PostOrderTraverseEmbedding()
 
 	app.MainCalc()
 }
