@@ -38,7 +38,7 @@ func UseNode() {
 	/*
 			                  root:3
 		        node:2                     root:1
-		node:nil      node:nil       node:0      node:9
+		node:nil      node:nil       node:0      node:8
 	*/
 
 	//var root Node // 这时候 root 为 nil
@@ -47,9 +47,9 @@ func UseNode() {
 	root.right = &Node{value: 1, left: nil, right: nil}
 	root.right.left = new(Node) // 这时候 new 出来的 Node 的 value 是默认初始值 0
 	root.right.right = CreateNode(9)
-
 	root.right.right.SetValue(8)
 
+	// 遍历
 	root.Traverse()
 }
 

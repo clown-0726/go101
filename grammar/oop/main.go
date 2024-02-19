@@ -2,12 +2,14 @@ package main
 
 import (
 	"fmt"
-	"go101/grammar/oom/app"
+	"go101/grammar/oop/app"
 )
 
 func main() {
 	app.UseNodeMany()
 	app.UseNode()
+
+	fmt.Println("---------")
 
 	// use q
 	q := app.Queue{1, 2, 3}
@@ -16,8 +18,17 @@ func main() {
 	fmt.Println(q)
 	fmt.Println(q.IsEmpty())
 
+	fmt.Println("---------")
+
 	// PostOrder
 	app.PostOrder()
+
+	fmt.Println("---------")
+
+	// PostOrderEmbedding
+	app.PostOrderEmbedding()
+
+	app.MainCalc()
 }
 
 /*

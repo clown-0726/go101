@@ -1,19 +1,19 @@
 package app
 
-type MyTreeNode struct {
-	TreeNode *Node
+type MyNode struct {
+	Node *Node
 }
 
-func (myTreeNode *MyTreeNode) postOrder() {
-	if myTreeNode == nil || myTreeNode.TreeNode == nil {
+func (myNode *MyNode) postOrder() {
+	if myNode == nil || myNode.Node == nil {
 		return
 	}
 
-	left := MyTreeNode{myTreeNode.TreeNode.left}
+	left := MyNode{myNode.Node.left}
 	left.postOrder()
-	right := MyTreeNode{myTreeNode.TreeNode.right}
+	right := MyNode{myNode.Node.right}
 	right.postOrder()
-	myTreeNode.TreeNode.Print()
+	myNode.Node.Print()
 }
 
 func PostOrder() {
@@ -24,6 +24,6 @@ func PostOrder() {
 	root.right.right = CreateNode(9)
 	root.right.right.SetValue(8)
 
-	myTreeNode := MyTreeNode{&root}
-	myTreeNode.postOrder()
+	myNode := MyNode{&root}
+	myNode.postOrder()
 }
