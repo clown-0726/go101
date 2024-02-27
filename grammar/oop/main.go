@@ -29,6 +29,11 @@ func main() {
 	app.PostOrderTraverseEmbedding()
 
 	app.MainCalc()
+
+	// Interface
+	app.MainWhatIsInterface()
+
+	app.MainInterfaceArray()
 }
 
 /*

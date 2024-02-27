@@ -1,4 +1,4 @@
-package main
+package app
 
 import "fmt"
 
@@ -10,13 +10,13 @@ type Human struct {
 	firstName, lastName string
 }
 
+func (h *Human) getName() string {
+	return h.firstName + "," + h.lastName
+}
+
 type Plane struct {
 	vendor string
 	model  string
-}
-
-func (h *Human) getName() string {
-	return h.firstName + "," + h.lastName
 }
 
 func (p Plane) getName() string {
@@ -31,7 +31,7 @@ func (c *Car) getName() string {
 	return c.factory + "-" + c.model
 }
 
-func main() {
+func MainInterfaceArray() {
 	interfaces := []IF{}
 
 	h := new(Human)
@@ -44,12 +44,14 @@ func main() {
 	c.model = "s"
 	interfaces = append(interfaces, c)
 
-	for _, f := range interfaces {
-		fmt.Println(f.getName())
-	}
-
 	p := Plane{}
 	p.vendor = "testVendor"
 	p.model = "testModel"
 	fmt.Println(p.getName())
+	interfaces = append(interfaces, p)
+
+	// 遍历接口集合中的元素，并调用 getName 方法
+	for _, f := range interfaces {
+		fmt.Println(f.getName())
+	}
 }
