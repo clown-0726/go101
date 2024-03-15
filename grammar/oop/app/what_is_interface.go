@@ -14,7 +14,7 @@ type RealRetriever struct {
 	Name string
 }
 
-func (r RealRetriever) Get(url string) string {
+func (r *RealRetriever) Get(url string) string {
 	return "RealRetriever..."
 }
 
@@ -31,7 +31,10 @@ func MainWhatIsInterface() {
 	var r Retriever
 	r = MockRetriever{Name: "I am a MockRetriever"}
 	fmt.Println(download(r))
+	fmt.Printf("%T, %v\n", r, r)
 
-	r = RealRetriever{Name: "I am a RealRetriever"}
+	// RealRetriever 中 Get 方式是指针接收者，因此要取其指针地址
+	r = &RealRetriever{Name: "I am a RealRetriever"}
 	fmt.Println(download(r))
+	fmt.Printf("%T, %v\n", r, r)
 }

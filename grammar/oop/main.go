@@ -1,39 +1,39 @@
 package main
 
 import (
-	"fmt"
-	"go101/grammar/oop/app"
+	"go101/grammar/multithreading/app"
 )
 
 func main() {
-	app.UseNodeMany()
-	app.InOrderTraverse()
+	//app.UseNodeMany()
+	//app.InOrderTraverse()
+	//
+	//fmt.Println("---------")
+	//
+	//// use Queue
+	//app.MainUseQueue()
+	//
+	//// use QueueAny
+	//app.MainUseQueueAny()
+	//
+	//fmt.Println("---------")
+	//
+	//// PostOrder
+	//app.PostOrderTraverse()
+	//
+	//fmt.Println("---------")
+	//
+	//// PostOrderEmbedding
+	//app.PostOrderTraverseEmbedding()
+	//
+	//app.MainCalc()
+	//
+	//// Interface
+	//app.MainWhatIsInterface()
+	//
+	//app.MainInterfaceArray()
 
-	fmt.Println("---------")
-
-	// use q
-	q := app.Queue{1, 2, 3}
-	q.Push(4)
-	q.Pop()
-	fmt.Println(q)
-	fmt.Println(q.IsEmpty())
-
-	fmt.Println("---------")
-
-	// PostOrder
-	app.PostOrderTraverse()
-
-	fmt.Println("---------")
-
-	// PostOrderEmbedding
-	app.PostOrderTraverseEmbedding()
-
-	app.MainCalc()
-
-	// Interface
-	app.MainWhatIsInterface()
-
-	app.MainInterfaceArray()
+	app.MainSemaphore()
 }
 
 /*
