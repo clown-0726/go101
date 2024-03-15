@@ -1,7 +1,7 @@
 package main
 
 import (
-	"time"
+	"go101/grammar/multithreading/cus_pro"
 )
 
 func main() {
@@ -20,8 +20,8 @@ func main() {
 	//lock.WaitGroup()
 	//lock.InvokeCond()
 
-	//cus_pro.Main4CusProMulti()
+	cus_pro.Main4CusProMulti()
 	//cus_pro.CustomerProducer()
 
-	time.Sleep(time.Second)
+	//app.MainSemaphore()
 }
