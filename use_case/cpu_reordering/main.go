@@ -6,7 +6,7 @@ import (
 	"sync/atomic"
 )
 
-func withCpuReordering() {
+func withoutCpuReordering() {
 	index := 0
 	for {
 		index += 1
@@ -33,14 +33,14 @@ func withCpuReordering() {
 		wg.Wait()
 
 		if x == 0 && y == 0 {
-			panic("CPU Reording occurs!")
+			panic("CPU Reordering occurs!")
 		} else {
 			fmt.Println("Now processing in loop", index)
 		}
 	}
 }
 
-func withoutCpuReordering() {
+func withCpuReordering() {
 	index := 0
 	for {
 		index += 1
@@ -67,7 +67,7 @@ func withoutCpuReordering() {
 		wg.Wait()
 
 		if x == 0 && y == 0 {
-			panic("CPU Reording occurs!")
+			panic("CPU Reordering occurs!")
 		} else {
 			fmt.Println("Now processing in loop", index)
 		}
@@ -76,8 +76,9 @@ func withoutCpuReordering() {
 
 func main() {
 	// 在第 1738, 110002, 12987 次测试到了 CPU 指令重排序
+	//runtime.GOMAXPROCS(1)
 	withoutCpuReordering()
 
 	// 一直到 1370370 也没测试到 CPU 指令重排序
-	withCpuReordering()
+	//withCpuReordering()
 }
